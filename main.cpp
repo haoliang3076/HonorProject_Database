@@ -9,13 +9,15 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <cstdio>
+
 using namespace std;
 void input();
 void serach();
 void edit();
 void displayAll();
-//int argc, const char * argv[]
-int main(int argc, const char * argv[]) {
+
+int main() {
     system("cls");
     system("title HaoliangZhang Database Program");
     system("colr of");
@@ -73,6 +75,7 @@ void input()
     ofstream dir("directory.txt", ios::app);
     dir<< fname << ' ' << lname << ' '<< id << ' ' << major << ' ' << gpa <<endl;
     dir.close();
+    main();
 }
 void serach()
 {
@@ -119,6 +122,7 @@ void serach()
         cout<< fname << ' ' << lname << ' '<< id << ' ' << major << ' ' << gpa <<endl;
     }
         system("pause");
+        main();
 
 }
     
@@ -133,10 +137,10 @@ void edit()
     string major;
     string newmajor;
     int id;
-    int newid;
+    int newid = 0;
     int thrw;
     double gpa;
-    double newgpa;
+    double newgpa = 0.0;
     cout<<"Enter the students ID of the student whose data you wish to edit:"<<endl;
     cin>>id;
     string id2= to_string(id);
@@ -144,13 +148,14 @@ void edit()
     
     ifstream student(id2);
     
-    while(student>> fname>> lname>> thrw>> major>> gpa)
-    if(decision=="y"){
-        system("cls");
-        cout<<"Current Information:"<<endl;
+    while(student>> fname>> lname>> thrw>> major>> gpa){
         int fnameLength = fname.size();
         int lnameLength = lname.size();
         int lengthTotal = fnameLength + lnameLength;
+    if(decision=="y"){
+        system("cls");
+        cout<<"Current Information:"<<endl;
+        
         system("cls");
             cout<<"Name";
             for(int y= 1; y < lengthTotal; y++){
@@ -162,6 +167,7 @@ void edit()
         }
         cout<<"G.P.A";
         cout<<"ID#"<<endl;
+
         for(int x = 1; x < lengthTotal; x++){
             cout<< "-";
         }
@@ -177,6 +183,8 @@ void edit()
     cin>>newmajor;
     cout<<"Enter new G.P.A";
     cin>>newgpa;
+    if(decision == "n"){
+        main();
 }
 }
 student.close();
@@ -184,11 +192,9 @@ ofstream student2(id2);
 student2 <<newfname << newlname << newid << newmajor << newgpa <<endl;
 system("pause");
 student2.close();
-
-
 }
-void displayAll()
-{
+
+void displayAll(){
 system("cls");
 string fname;
 string lname;
@@ -204,5 +210,6 @@ cout<< fname << ' '<< lname<< ' ' << major <<' '<< gpa << ' ' << id << ' '<<endl
 
 }
 system("pause");
+    main();
 }
 
