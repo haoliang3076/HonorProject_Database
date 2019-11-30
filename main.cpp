@@ -18,9 +18,9 @@ void edit();
 void displayAll();
 
 int main() {
-    system("cls");
-    system("title HaoliangZhang Database Program");
-    system("colr of");
+   // system("cls");
+   // system("title HaoliangZhang Database Program");
+   // system("colr of");
     
     cout<<"Please enter choice"<<endl;
     cout<<"1.Input new student"<<endl;
@@ -48,7 +48,7 @@ int main() {
 }
 void input()
 {
-    system("cls");
+    //system("cls");
     string fname;
     string lname;
     string fileName;
@@ -79,7 +79,7 @@ void input()
 }
 void serach()
 {
-    system("cls");
+    //system("cls");
     string fname;
     string lname;
     string fileName;
@@ -104,17 +104,19 @@ void serach()
         cin>> answer;
         
         if(answer=="y"){
-            system("cls");
+           // system("cls");
             cout<<"Name";
             for(int y= 1; y < lengthTotal; y++){
                 cout<< " ";
             }
-            cout<<"major";
+            cout<<"ID#"<<" ";
+            
+            cout<<"major"<<" ";
             for (int z = 1; z< 2; z++);
             cout << " ";
         }
-        cout<<"G.P.A";
-        cout<<"ID#"<<endl;
+        cout<<"G.P.A"<<" ";
+       
         for(int x= 1; x < lengthTotal; x++){
             cout<< "-";
         }
@@ -128,7 +130,7 @@ void serach()
     
 void edit()
 {
-    system("cls");
+    //system("cls");
     string fname;
     string lname;
     string newfname;
@@ -137,10 +139,10 @@ void edit()
     string major;
     string newmajor;
     int id;
-    int newid = 0;
+    int newid;
     int thrw;
     double gpa;
-    double newgpa = 0.0;
+    double newgpa;
     cout<<"Enter the students ID of the student whose data you wish to edit:"<<endl;
     cin>>id;
     string id2= to_string(id);
@@ -177,7 +179,7 @@ void edit()
     cin>>newfname;
     cout<<"Enter new last name:";
     cin>>newlname;
-    cout<<"Enter new I.D";
+    cout<<"Enter new I.D:";
     cin>>newid;
     cout<<"Enter new major:";
     cin>>newmajor;
@@ -195,7 +197,7 @@ student2.close();
 }
 
 void displayAll(){
-system("cls");
+//ystem("cls");
 string fname;
 string lname;
 string major;
@@ -212,4 +214,3 @@ cout<< fname << ' '<< lname<< ' ' << major <<' '<< gpa << ' ' << id << ' '<<endl
 system("pause");
     main();
 }
-
